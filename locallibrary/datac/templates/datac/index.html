@@ -1,0 +1,20 @@
+<h1>LOG IN</h1>
+{% if not errcode %}
+    <h2>{{err}}</h2>
+{% endif %}
+<form  action="{% url 'datac:login' %}" method="post">
+{% csrf_token %}
+    <label>enter credentials</label>
+    <div>
+    <label for="1a">USER NAME</label>
+    <input id="1a" type="text" name="username">
+    </div>
+    <div>
+    <label for="2b">PASSWORD</label>
+    <input id="2b" type="text" name="password" >
+    <input type="submit" value="login">
+    <div>
+</form>
+<div>
+    <a href="{% url 'datac:Create_user' %}">create new user</a>
+</div>
